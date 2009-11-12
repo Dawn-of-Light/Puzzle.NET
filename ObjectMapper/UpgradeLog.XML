@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Puzzle.ObjectMapper">
+</Property><Property Name="Solution File" Value="Puzzle.ObjectMapper.sln">
+</Property><Property Name="Date" Value="1 июля 2006 г.">
+</Property><Property Name="Time" Value="17:02">
+</Property></Properties><Event ErrorLevel="2" Project="Puzzle.NPersist.Framework" Source="..\NPersist\Framework\Puzzle.NPersist.Framework.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Tools" Source="Tools\Puzzle.ObjectMapper.Tools.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Tools" Source="Tools\Puzzle.ObjectMapper.Tools.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Plugin" Source="Plugin\Puzzle.ObjectMapper.Plugin.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Plugin" Source="Plugin\Puzzle.ObjectMapper.Plugin.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.GUI.ProjectModel" Source="ProjectModel\Puzzle.ObjectMapper.GUI.ProjectModel.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.GUI.ProjectModel" Source="ProjectModel\Puzzle.ObjectMapper.GUI.ProjectModel.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.GUI.Plugins" Source="Plugins\Puzzle.ObjectMapper.GUI.Plugins.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.GUI.Plugins" Source="Plugins\Puzzle.ObjectMapper.GUI.Plugins.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.GUI" Source="GUI\Puzzle.ObjectMapper.GUI.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.GUI" Source="GUI\Puzzle.ObjectMapper.GUI.vbproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="Puzzle.NPersist.Tools.DomainExplorer" Source="..\NPersist\Tools\DomainExplorer\Puzzle.NPersist.Tools.DomainExplorer.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.NAspect.Framework" Source="..\NAspect\Framework\Puzzle.NAspect.Framework.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.NPath.Framework" Source="..\NPath\Framework\Puzzle.NPath.Framework.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.NPersist.Tools.QueryAnalyser" Source="..\NPersist\Tools\QueryAnalyzer\Puzzle.NPersist.Tools.QueryAnalyser.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.NPersist.Tools.QueryAnalyzer.SyntaxBoxWrapper" Source="..\NPersist\Tools\QueryAnalyzer\SyntaxBoxWrapper\Puzzle.NPersist.Tools.QueryAnalyzer.SyntaxBoxWrapper.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Tools.SqlToDll" Source="Tools\SqlToDll\Puzzle.ObjectMapper.Tools.SqlToDll.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Tools.SqlToDll" Source="Tools\SqlToDll\Puzzle.ObjectMapper.Tools.SqlToDll.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="Puzzle.NCore.Framework" Source="..\NCore\Framework\Puzzle.NCore.Framework.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.SyntaxBox" Source="..\Windows\Forms\Controls\Syntaxbox\SyntaxBox\Puzzle.SyntaxBox.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.SyntaxDocument" Source="..\Windows\Forms\Controls\Syntaxbox\SyntaxDocument\Puzzle.SyntaxDocument.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.CoreLib" Source="..\Windows\Forms\Controls\Syntaxbox\CoreLib\Puzzle.CoreLib.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.Syntaxbox.DefaultSyntaxFiles" Source="..\Windows\Forms\Controls\Syntaxbox\Puzzle.Syntaxbox.DefaultSyntaxFiles\Puzzle.Syntaxbox.DefaultSyntaxFiles.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.NPersist.Tools.QueryAnalyzer.Startup" Source="..\NPersist\Tools\QueryAnalyzer\Startup\Puzzle.NPersist.Tools.QueryAnalyzer.Startup.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="2" Project="Puzzle.NPersist.Tools.DomainExplorer.Startup" Source="..\NPersist\Tools\DomainExplorer\Startup\Puzzle.NPersist.Tools.DomainExplorer.Startup.csproj" Description="Unable open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Plugins.InfrastructureGenerator" Source="Plugins\InfrastructureGenerator\Puzzle.ObjectMapper.Plugins.InfrastructureGenerator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Plugins.InfrastructureGenerator" Source="Plugins\InfrastructureGenerator\Puzzle.ObjectMapper.Plugins.InfrastructureGenerator.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Puzzle.ObjectMapper.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Puzzle.ObjectMapper.sln" Description="Converted">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Tools" Source="Tools\TablesToClasses\TablesToClasses.vb" Description="file converted">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Tools" Source="Tools\TablesToSource\TablesToSourceMSAccess.vb" Description="file converted">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.Tools" Source="Tools\TablesToSource\TablesToSourceMSSqlServer.vb" Description="file converted">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Plugin" Source="Plugin\Puzzle.ObjectMapper.Plugin.vbproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.GUI.ProjectModel" Source="ProjectModel\Puzzle.ObjectMapper.GUI.ProjectModel.vbproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.GUI.Plugins" Source="Plugins\Puzzle.ObjectMapper.GUI.Plugins.vbproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="3" Project="Puzzle.ObjectMapper.GUI" Source="GUI\Components\DomainMap\PropertyGrid\Classes\Map\ColumnProperties.vb" Description="file converted">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Tools.SqlToDll" Source="Tools\SqlToDll\Puzzle.ObjectMapper.Tools.SqlToDll.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Puzzle.ObjectMapper.Plugins.InfrastructureGenerator" Source="Plugins\InfrastructureGenerator\Puzzle.ObjectMapper.Plugins.InfrastructureGenerator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

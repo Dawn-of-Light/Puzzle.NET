@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<doc>
+  <assembly>
+    <name>MatsSoft.ObjectMapper.Tools</name>
+    <version>1.0.0.6639</version>
+    <fullname>MatsSoft.ObjectMapper.Tools, Version=1.0.0.6639, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="M:MatsSoft.ObjectMapper.Tools.ClassesToCodeBase.GetDocComment(NPersist.Framework.Mapping.IClassMap,String)">
+      <summary>
+ 
+ </summary>
+ <param name="classMap">
+ 	[description goes here]. 
+ 	Value Type: <see cref="NPersist.Framework.Mapping.IClassMap" />	(MatsSoft.NPersist.Framework.Mapping.IClassMap) 
+ </param>
+ <exception cref="System.ApplicationException">
+ 	Thrown when... 
+ </exception>
+ <returns><see cref="String" />	(System.String)</returns>
+ <remarks>
+ </remarks></member>
+  </members>
+</doc>

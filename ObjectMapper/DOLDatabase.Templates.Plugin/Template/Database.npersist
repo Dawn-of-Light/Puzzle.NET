@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<domain name="Database" assembly="DOLDatabase.MySql" root="DOLDatabase" source="Database" field-strategy="PascalCase">
+  <class name="Ability" table="ability">
+    <property name="KeyName" id="true" columns="KeyName" type="System.String" />
+    <property name="Description" columns="Description" type="System.String" />
+    <property name="IconId" columns="IconId" type="System.Int32" />
+    <property name="Name" columns="Name" type="System.String" />
+  </class>
+  <class name="Account" table="account">
+    <property name="Id" id="true" columns="AccountId" type="System.Int32" />
+    <property name="AccountName" columns="AccountName" type="System.String" />
+    <property name="BanAuthor" columns="BanAuthor" type="System.String" />
+    <property name="BanDuration" columns="BanDuration" type="System.Int64" />
+    <property name="BanReason" columns="BanReason" type="System.String" />
+    <property name="CreationDate" columns="CreationDate" type="System.DateTime" />
+    <property name="LastLogin" columns="LastLogin" type="System.DateTime" />
+    <property name="LastLoginIp" columns="LastLoginIp" type="System.String" />
+    <property name="Mail" columns="Mail" type="System.String" />
+    <property name="Password" columns="Password" type="System.String" />
+    <property name="PrivLevel" columns="PrivLevel" type="System.Byte" />
+    <property name="Realm" columns="Realm" type="System.Byte" />
+  </class>
+  <class name="ActiveQuest" table="activequests">
+    <property name="Id" id="true" columns="AbstractQuestId" type="System.Int32" />
+    <property name="PersistantGameObject" columns="PersistantGameObjectId" ref="OneToMany" type="GamePlayer" />
+    <property name="QuestType" columns="QuestType" type="System.String" />
+    <property name="Step1" columns="Step" type="System.Byte" />
+  </class>
+  <class name="ActiveTask" table="activetasks">
+    <property name="AbstractTask" id="true" columns="AbstractTaskId" ref="OneToOne" type="GamePlayer" />
+    <property name="ItemName" columns="ItemName" type="System.String" />
+    <property name="RewardGiverName" columns="RewardGiverName" type="System.String" />
+    <property name="StartingPlayedTime" columns="StartingPlayedTime" type="System.Int64" />
+    <property name="TargetKilled" columns="TargetKilled" type="System.Boolean" />
+    <property name="TargetMobName" columns="TargetMobName" type="System.String" />
+    <property name="TaskType" columns="TaskType" type="System.String" />
+  </class>
+  <class name="Alliance" table="alliance">
+    <property name="Id" id="true" columns="AllianceId" type="System.Int32" />
+    <property name="AllianceLeader" columns="AllianceLeader" ref="OneToMany" type="guild" />
+    <property name="AMotd" columns="AMotd" type="System.String" />
+  </class>
+  <class name="Area" table="area">
+    <property name="Id" id="true" columns="AreaId" type="System.Int32" />
+    <property name="AreaType" columns="AreaType" type="System.String" />
+    <property name="Description" columns="Description" type="System.String" />
+    <property name="Height" columns="Height" type="System.Int32" />
+    <property name="IsBroadcastEnabled" columns="IsBroadcastEnabled" type="System.Boolean" />
+    <property name="Radius" columns="Radius" type="System.Int32" />
+    <property name="RegionId" columns="RegionId" type="System.Int32" />
+    <property name="Sound" columns="Sound" type="System.Byte" />
+    <property name="Width" columns="Width" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+  </class>
+  <class name="BindPoint" table="bindpoint">
+    <property name="Id" id="true" columns="BindPointId" type="System.Int32" />
+    <property name="Radius" columns="Radius" type="System.Int32" />
+    <property name="Realm" columns="Realm" type="System.Int32" />
+    <property name="Region" columns="Region" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="Brain" table="brain">
+    <property name="ABrain" id="true" columns="ABrainId" ref="OneToOne" type="persistantgameobject" />
+    <property name="ABrainType" columns="ABrainType" type="System.String" />
+    <property name="AggroLevel" columns="AggroLevel" type="System.Int32" />
+    <property name="AggroRange" columns="AggroRange" type="System.Int32" />
+  </class>
+  <class name="BrainTemplate" table="braintemplate">
+    <property name="ABrainTemplate" id="true" columns="ABrainTemplateId" ref="OneToOne" type="gamenpctemplate" />
+    <property name="ABrainTemplateType" columns="ABrainTemplateType" type="System.String" />
+    <property name="AggroLevel" columns="AggroLevel" type="System.Int32" />
+    <property name="AggroRange" columns="AggroRange" type="System.Int32" />
+  </class>
+  <class name="CraftItemData" table="craftitemdata">
+    <property name="Id" id="true" columns="CraftItemDataId" type="System.Int32" />
+    <property name="CraftingLevel" columns="CraftingLevel" type="System.Int32" />
+    <property name="CraftingSkill" columns="CraftingSkill" type="System.Int32" />
+    <property name="TemplateToCraft" columns="TemplateToCraft" ref="OneToMany" type="itemtemplate" />
+  </class>
+  <class name="EnemyFaction" table="enemyfactions">
+    <property name="FactionId" id="true" id-index="1" columns="FactionId" type="System.Int32" />
+    <property name="EnemyFactionId" id="true" id-index="0" columns="EnemyFactionId" type="System.Int32" />
+  </class>
+  <class name="Faction" table="faction">
+    <property name="FactionId" id="true" columns="FactionId" type="System.Int32" />
+    <property name="Name" columns="Name" type="System.String" />
+  </class>
+  <class name="FactionAggroLevel" table="factionaggrolevel">
+    <property name="FactionId" id="true" id-index="0" columns="FactionId" type="System.Int32" />
+    <property name="PersistantGameObject" id="true" id-index="1" columns="PersistantGameObjectId" ref="OneToMany" type="GamePlayer" />
+    <property name="AggroLevel" columns="AggroLevel" type="System.Int32" />
+  </class>
+  <class name="FinishedQuest" table="finishedquests">
+    <property name="Count" id="true" id-index="0" columns="Count" type="System.Byte" />
+    <property name="FinishedQuestType" id="true" id-index="1" columns="FinishedQuestType" type="System.String" />
+    <property name="PersistantGameObject" id="true" id-index="2" columns="PersistantGameObjectId" ref="OneToMany" type="GamePlayer" />
+  </class>
+  <class name="FriendFaction" table="friendfactions">
+    <property name="FactionId" id="true" id-index="0" columns="FactionId" type="System.Int32" />
+    <property name="FriendFactionId" id="true" id-index="1" columns="FriendFactionId" type="System.Int32" />
+  </class>
+  <class name="GameNpcInventory" table="gamenpcinventory">
+    <property name="Id" id="true" columns="InventoryId" type="System.Int32" />
+    <property name="IsCloakHoodUp" columns="IsCloakHoodUp" type="System.Boolean" />
+  </class>
+  <class name="GameNpcTemplate" table="gamenpctemplate">
+    <property name="Id" id="true" columns="GameNPCTemplateId" type="System.Int32" />
+    <property name="BlockChance" columns="BlockChance" type="System.Byte" />
+    <property name="EvadeChance" columns="EvadeChance" type="System.Byte" />
+    <property name="FactionId" columns="FactionId" type="System.Int32" />
+    <property name="Flags" columns="Flags" type="System.Byte" />
+    <property name="GameNPCTemplateType" columns="GameNPCTemplateType" type="System.String" />
+    <property name="GuildName" columns="GuildName" type="System.String" />
+    <property name="InventoryId" columns="InventoryId" type="System.Int32" />
+    <property name="LeftHandSwingChance" columns="LeftHandSwingChance" type="System.Byte" />
+    <property name="LootListId" columns="LootListId" type="System.Int32" />
+    <property name="MaxLevel" columns="MaxLevel" type="System.Byte" />
+    <property name="MaxSize" columns="MaxSize" type="System.Byte" />
+    <property name="MaxSpeedBase" columns="MaxSpeedBase" type="System.Int32" />
+    <property name="MeleeDamageType" columns="MeleeDamageType" type="System.Byte" />
+    <property name="MinLevel" columns="MinLevel" type="System.Byte" />
+    <property name="MinSize" columns="MinSize" type="System.Byte" />
+    <property name="Model" columns="Model" type="System.Int32" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="ParryChance" columns="ParryChance" type="System.Byte" />
+    <property name="Realm" columns="Realm" type="System.Byte" />
+    <property name="RespawnInterval" columns="RespawnInterval" type="System.Int32" />
+  </class>
+  <class name="GamePlayer" table="gameplayer">
+    <property name="Id" id="true" columns="PersistantGameObjectId" type="System.Int32" />
+    <property name="Account" columns="AccountId" ref="OneToMany" type="Account" DOLFindByGroup="0" DOLFindByGroupIndex="0" />
+    <property name="ActiveQuiverSlot" columns="ActiveQuiverSlot" type="System.Byte" />
+    <property name="ActiveWeaponSlot" columns="ActiveWeaponSlot" type="System.Byte" />
+    <property name="BaseCharisma" columns="BaseCharisma" type="System.Int32" />
+    <property name="BaseConstitution" columns="BaseConstitution" type="System.Int32" />
+    <property name="BaseDexterity" columns="BaseDexterity" type="System.Int32" />
+    <property name="BaseEmpathy" columns="BaseEmpathy" type="System.Int32" />
+    <property name="BaseIntelligence" columns="BaseIntelligence" type="System.Int32" />
+    <property name="BasePiety" columns="BasePiety" type="System.Int32" />
+    <property name="BaseQuickness" columns="BaseQuickness" type="System.Int32" />
+    <property name="BaseStrength" columns="BaseStrength" type="System.Int32" />
+    <property name="BindHeading" columns="BindHeading" type="System.Int32" />
+    <property name="BindRegionId" columns="BindRegionId" type="System.Int32" />
+    <property name="BindX" columns="BindX" type="System.Int32" />
+    <property name="BindY" columns="BindY" type="System.Int32" />
+    <property name="BindZ" columns="BindZ" type="System.Int32" />
+    <property name="BountyPoints" columns="BountyPoints" type="System.Int64" />
+    <property name="CancelStyle" columns="CancelStyle" type="System.Boolean" />
+    <property name="CapturedKeeps" columns="CapturedKeeps" type="System.Int32" />
+    <property name="CapturedTowers" columns="CapturedTowers" type="System.Int32" />
+    <property name="CharacterClassId" columns="CharacterClassId" type="System.Int32" />
+    <property name="CraftingPrimarySkill" columns="CraftingPrimarySkill" type="System.Int32" />
+    <property name="CreationDate" columns="CreationDate" type="System.DateTime" />
+    <property name="CreationModel" columns="CreationModel" type="System.Int32" />
+    <property name="CurrentTitleType" columns="CurrentTitleType" type="System.String" />
+    <property name="CustomisationStep" columns="CustomisationStep" type="System.Byte" />
+    <property name="DeathCount" columns="DeathCount" type="System.Byte" />
+    <property name="DeathTime" columns="DeathTime" type="System.Int64" />
+    <property name="DisabledAbilities" columns="DisabledAbilities" type="System.String" />
+    <property name="DisabledSpells" columns="DisabledSpells" type="System.String" />
+    <property name="EndurancePercent" columns="EndurancePercent" type="System.Byte" />
+    <property name="Experience" columns="Experience" type="System.Int64" />
+    <property name="EyeColor" columns="EyeColor" type="System.Byte" />
+    <property name="EyeSize" columns="EyeSize" type="System.Byte" />
+    <property name="FaceType" columns="FaceType" type="System.Byte" />
+    <property name="Gender" columns="Gender" type="System.Int32" />
+    <property name="GuildName" columns="GuildName" type="System.String" />
+    <property name="GuildNameFlag" columns="GuildNameFlag" type="System.Boolean" />
+    <property name="GuildRank" columns="GuildRank" type="System.Byte" />
+    <property name="HairColor" columns="HairColor" type="System.Byte" />
+    <property name="HairStyle" columns="HairStyle" type="System.Byte" />
+    <property name="Heading" columns="Heading" type="System.Int32" />
+    <property name="Health" columns="Health" type="System.Int32" />
+    <property name="IsAnonymous" columns="IsAnonymous" type="System.Boolean" />
+    <property name="IsLevelRespecUsed" columns="IsLevelRespecUsed" type="System.Boolean" />
+    <property name="IsLevelSecondStage" columns="IsLevelSecondStage" type="System.Boolean" />
+    <property name="KillsAlbionDeathBlows" columns="KillsAlbionDeathBlows" type="System.Int32" />
+    <property name="KillsAlbionPlayers" columns="KillsAlbionPlayers" type="System.Int32" />
+    <property name="KillsAlbionSolo" columns="KillsAlbionSolo" type="System.Int32" />
+    <property name="KillsHiberniaDeathBlows" columns="KillsHiberniaDeathBlows" type="System.Int32" />
+    <property name="KillsHiberniaPlayers" columns="KillsHiberniaPlayers" type="System.Int32" />
+    <property name="KillsHiberniaSolo" columns="KillsHiberniaSolo" type="System.Int32" />
+    <property name="KillsMidgardDeathBlows" columns="KillsMidgardDeathBlows" type="System.Int32" />
+    <property name="KillsMidgardPlayers" columns="KillsMidgardPlayers" type="System.Int32" />
+    <property name="KillsMidgardSolo" columns="KillsMidgardSolo" type="System.Int32" />
+    <property name="LastName" columns="LastName" type="System.String" />
+    <property name="LastPlayed" columns="LastPlayed" type="System.DateTime" />
+    <property name="Level" columns="Level" type="System.Byte" />
+    <property name="LipSize" columns="LipSize" type="System.Byte" />
+    <property name="LotNumber" columns="LotNumber" type="System.Int32" />
+    <property name="Mana" columns="Mana" type="System.Int32" />
+    <property name="MaxSpeedBase" columns="MaxSpeedBase" type="System.Int32" />
+    <property name="Model" columns="Model" type="System.Int32" />
+    <property name="Money" columns="Money" type="System.Int64" />
+    <property name="MoodType" columns="MoodType" type="System.Byte" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="PlayedTime" columns="PlayedTime" type="System.Int64" />
+    <property name="Race" columns="Race" type="System.Int32" />
+    <property name="Realm" columns="Realm" type="System.Byte" DOLFindByGroup="0" DOLFindByGroupIndex="1" />
+    <property name="RealmLevel" columns="RealmLevel" type="System.Int32" />
+    <property name="RealmPoints" columns="RealmPoints" type="System.Int64" />
+    <property name="RealmSpecialtyPoints" columns="RealmSpecialtyPoints" type="System.Int32" />
+    <property name="RegionId" columns="RegionId" type="System.Int32" />
+    <property name="RespecAmountAllSkill" columns="RespecAmountAllSkill" type="System.Int32" />
+    <property name="RespecAmountSingleSkill" columns="RespecAmountSingleSkill" type="System.Int32" />
+    <property name="RespecBought" columns="RespecBought" type="System.Int32" />
+    <property name="SafetyFlag" columns="SafetyFlag" type="System.Boolean" />
+    <property name="SerializedAbilities" columns="SerializedAbilities" type="System.String" />
+    <property name="SerializedCraftingSkills" columns="SerializedCraftingSkills" type="System.String" />
+    <property name="SerializedFriendsList" columns="SerializedFriendsList" type="System.String" />
+    <property name="SerializedSpecs" columns="SerializedSpecs" type="System.String" />
+    <property name="SerializedSpellLines" columns="SerializedSpellLines" type="System.String" />
+    <property name="SkillSpecialtyPoints" columns="SkillSpecialtyPoints" type="System.Int32" />
+    <property name="SlotPosition" columns="SlotPosition" type="System.Byte" />
+    <property name="SpellQueue" columns="SpellQueue" type="System.Boolean" />
+    <property name="Styles" columns="Styles" type="System.String" />
+    <property name="TaskDone" columns="TaskDone" type="System.Byte" />
+    <property name="TotalConstitutionLostAtDeath" columns="TotalConstitutionLostAtDeath" type="System.Int32" />
+    <property name="UsedLevelCommand" columns="UsedLevelCommand" type="System.Boolean" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="GamePlayerInventory" table="gameplayerinventory">
+    <property name="Inventory" id="true" columns="InventoryId" ref="OneToOne" type="GamePlayer" />
+    <property name="IsCloakHoodUp" columns="IsCloakHoodUp" type="System.Boolean" />
+  </class>
+  <class name="Guild" table="guild">
+    <property name="Id" id="true" columns="GuildId" type="System.Int32" />
+    <property name="Alliance" columns="Alliance" ref="OneToMany" type="alliance" />
+    <property name="BountyPoints" columns="BountyPoints" type="System.Int64" />
+    <property name="Due" columns="Due" type="System.Boolean" />
+    <property name="Email" columns="Email" type="System.String" />
+    <property name="Emblem" columns="Emblem" type="System.Int32" />
+    <property name="GuildName" columns="GuildName" type="System.String" />
+    <property name="Level" columns="Level" type="System.Int32" />
+    <property name="MeritPoints" columns="MeritPoints" type="System.Int64" />
+    <property name="Motd" columns="Motd" type="System.String" />
+    <property name="OMotd" columns="OMotd" type="System.String" />
+    <property name="RealmPoints" columns="RealmPoints" type="System.Int64" />
+    <property name="TotalMoney" columns="TotalMoney" type="System.Int64" />
+    <property name="Webpage" columns="Webpage" type="System.String" />
+  </class>
+  <class name="GuildRank" table="guildrank">
+    <property name="Id" id="true" columns="GuildRankId" type="System.Int32" />
+    <property name="AcHear" columns="AcHear" type="System.Boolean" />
+    <property name="AcSpeak" columns="AcSpeak" type="System.Boolean" />
+    <property name="Alli" columns="Alli" type="System.Boolean" />
+    <property name="Buff" columns="Buff" type="System.Boolean" />
+    <property name="BuyBanner" columns="BuyBanner" type="System.Boolean" />
+    <property name="Claim" columns="Claim" type="System.Boolean" />
+    <property name="Deposit" columns="Deposit" type="System.Boolean" />
+    <property name="Dues" columns="Dues" type="System.Boolean" />
+    <property name="Emblem" columns="Emblem" type="System.Boolean" />
+    <property name="GcHear" columns="GcHear" type="System.Boolean" />
+    <property name="GcSpeak" columns="GcSpeak" type="System.Boolean" />
+    <property name="GetMission" columns="GetMission" type="System.Boolean" />
+    <property name="Guild" columns="GuildId" ref="OneToMany" type="guild" />
+    <property name="Invite" columns="Invite" type="System.Boolean" />
+    <property name="Motd" columns="Motd" type="System.Boolean" />
+    <property name="OcHear" columns="OcHear" type="System.Boolean" />
+    <property name="OcSpeak" columns="OcSpeak" type="System.Boolean" />
+    <property name="Promote" columns="Promote" type="System.Boolean" />
+    <property name="RankLevel" columns="RankLevel" type="System.Byte" />
+    <property name="Release" columns="Release" type="System.Boolean" />
+    <property name="Remove" columns="Remove" type="System.Boolean" />
+    <property name="SetNote" columns="SetNote" type="System.Boolean" />
+    <property name="SummonBanner" columns="SummonBanner" type="System.Boolean" />
+    <property name="Title" columns="Title" type="System.String" />
+    <property name="Upgrade" columns="Upgrade" type="System.Boolean" />
+    <property name="View" columns="View" type="System.Boolean" />
+    <property name="Withdraw" columns="Withdraw" type="System.Boolean" />
+  </class>
+  <class name="InvalidName" table="invalidname">
+    <property name="Id" id="true" columns="InvalidNameId" type="System.Int32" />
+    <property name="Name" columns="Name" type="System.String" />
+  </class>
+  <class name="Item" table="item">
+    <property name="Id" id="true" columns="ItemId" type="System.Int32" />
+    <property name="ArmorFactor" columns="ArmorFactor" type="System.Byte" />
+    <property name="ArmorLevel" columns="ArmorLevel" type="System.Byte" />
+    <property name="Bonus" columns="Bonus" type="System.Int32" />
+    <property name="BonusType" columns="BonusType" type="System.Byte" />
+    <property name="Charge" columns="Charge" type="System.Byte" />
+    <property name="ChargeEffectType" columns="ChargeEffectType" type="System.Byte" />
+    <property name="ChargeSpellId" columns="ChargeSpellId" type="System.Int32" />
+    <property name="Condition" columns="Condition" type="System.Double" />
+    <property name="Count" columns="Count" type="System.Int32" />
+    <property name="CrafterName" columns="CrafterName" type="System.String" />
+    <property name="Damage" columns="Damage" type="System.Byte" />
+    <property name="DamagePerSecond" columns="DamagePerSecond" type="System.Byte" />
+    <property name="DamageType" columns="DamageType" type="System.Byte" />
+    <property name="Durability" columns="Durability" type="System.Byte" />
+    <property name="GenericItemType" columns="GenericItemType" type="System.String" />
+    <property name="GlowEffect" columns="GlowEffect" type="System.Int32" />
+    <property name="HandNeeded" columns="HandNeeded" type="System.Byte" />
+    <property name="Heading" columns="Heading" type="System.Int32" />
+    <property name="IsDropable" columns="IsDropable" type="System.Boolean" />
+    <property name="IsSaleable" columns="IsSaleable" type="System.Boolean" />
+    <property name="IsTradable" columns="IsTradable" type="System.Boolean" />
+    <property name="Level" columns="Level" type="System.Byte" />
+    <property name="MaterialLevel" columns="MaterialLevel" type="System.Byte" />
+    <property name="MaxCharge" columns="MaxCharge" type="System.Byte" />
+    <property name="MaxCount" columns="MaxCount" type="System.Int32" />
+    <property name="Model" columns="Model" type="System.Int32" />
+    <property name="ModelExtension" columns="ModelExtension" type="System.Byte" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="or1" columns="Color" type="System.Int32" />
+    <property name="Precision" columns="Precision" type="System.Byte" />
+    <property name="ProcEffectType" columns="ProcEffectType" type="System.Byte" />
+    <property name="ProcSpellId" columns="ProcSpellId" type="System.Int32" />
+    <property name="Quality" columns="Quality" type="System.Int32" />
+    <property name="QuestName" columns="QuestName" type="System.String" />
+    <property name="Range" columns="Range" type="System.Byte" />
+    <property name="Realm" columns="Realm" type="System.Byte" />
+    <property name="Region" columns="Region" type="System.Int32" />
+    <property name="RespecType" columns="RespecType" type="System.Byte" />
+    <property name="Size" columns="Size" type="System.Byte" />
+    <property name="SlotPosition" columns="SlotPosition" type="System.Int32" />
+    <property name="Speed" columns="Speed" type="System.Int32" />
+    <property name="SpellId" columns="SpellId" type="System.Int32" />
+    <property name="TripPathId" columns="TripPathId" type="System.Int32" />
+    <property name="Type" columns="Type" type="System.Byte" />
+    <property name="Value" columns="Value" type="System.Int64" />
+    <property name="WeaponRange" columns="WeaponRange" type="System.Int32" />
+    <property name="Weight" columns="Weight" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="ItemMagicalBonus" table="itemmagicalbonus">
+    <property name="Bonus" id="true" id-index="0" columns="Bonus" type="System.Int16" />
+    <property name="BonusType" id="true" id-index="1" columns="BonusType" type="System.Byte" />
+    <property name="Item" id="true" id-index="2" columns="ItemId" ref="OneToMany" type="item" />
+  </class>
+  <class name="ItemMagicalBonusTemplate" table="itemmagicalbonustemplate">
+    <property name="Bonus" id="true" id-index="0" columns="Bonus" type="System.Int16" />
+    <property name="BonusType" id="true" id-index="1" columns="BonusType" type="System.Byte" />
+    <property name="ItemTemplate" id="true" id-index="2" columns="ItemTemplateId" ref="OneToMany" type="itemtemplate" />
+  </class>
+  <class name="ItemTemplate" table="itemtemplate">
+    <property name="Id" id="true" columns="ItemTemplateId" type="System.String" />
+    <property name="ArmorFactor" columns="ArmorFactor" type="System.Byte" />
+    <property name="ArmorLevel" columns="ArmorLevel" type="System.Byte" />
+    <property name="Bonus" columns="Bonus" type="System.Int32" />
+    <property name="BonusType" columns="BonusType" type="System.Byte" />
+    <property name="Charge" columns="Charge" type="System.Byte" />
+    <property name="ChargeEffectType" columns="ChargeEffectType" type="System.Byte" />
+    <property name="ChargeSpellId" columns="ChargeSpellId" type="System.Int32" />
+    <property name="Condition" columns="Condition" type="System.Double" />
+    <property name="Damage" columns="Damage" type="System.Byte" />
+    <property name="DamagePerSecond" columns="DamagePerSecond" type="System.Byte" />
+    <property name="DamageType" columns="DamageType" type="System.Byte" />
+    <property name="Durability" columns="Durability" type="System.Byte" />
+    <property name="GlowEffect" columns="GlowEffect" type="System.Int32" />
+    <property name="HandNeeded" columns="HandNeeded" type="System.Byte" />
+    <property name="Heading" columns="Heading" type="System.Int32" />
+    <property name="IsDropable" columns="IsDropable" type="System.Boolean" />
+    <property name="IsSaleable" columns="IsSaleable" type="System.Boolean" />
+    <property name="IsTradable" columns="IsTradable" type="System.Boolean" />
+    <property name="ItemTemplateType" columns="ItemTemplateType" type="System.String" />
+    <property name="Level" columns="Level" type="System.Byte" />
+    <property name="MaterialLevel" columns="MaterialLevel" type="System.Byte" />
+    <property name="MaxCharge" columns="MaxCharge" type="System.Byte" />
+    <property name="MaxCount" columns="MaxCount" type="System.Int32" />
+    <property name="Model" columns="Model" type="System.Int32" />
+    <property name="ModelExtension" columns="ModelExtension" type="System.Byte" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="or1" columns="Color" type="System.Int32" />
+    <property name="PackSize" columns="PackSize" type="System.Int32" />
+    <property name="Precision" columns="Precision" type="System.Byte" />
+    <property name="ProcEffectType" columns="ProcEffectType" type="System.Byte" />
+    <property name="ProcSpellId" columns="ProcSpellId" type="System.Int32" />
+    <property name="Quality" columns="Quality" type="System.Int32" />
+    <property name="Range" columns="Range" type="System.Byte" />
+    <property name="Realm" columns="Realm" type="System.Byte" />
+    <property name="Region" columns="Region" type="System.Int32" />
+    <property name="RespecType" columns="RespecType" type="System.Byte" />
+    <property name="Size" columns="Size" type="System.Byte" />
+    <property name="Speed" columns="Speed" type="System.Int32" />
+    <property name="SpellId" columns="SpellId" type="System.Int32" />
+    <property name="TripPathId" columns="TripPathId" type="System.Int32" />
+    <property name="Type" columns="Type" type="System.Byte" />
+    <property name="Value" columns="Value" type="System.Int64" />
+    <property name="WeaponRange" columns="WeaponRange" type="System.Int32" />
+    <property name="Weight" columns="Weight" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="JumpPoint" table="jumppoint">
+    <property name="Id" id="true" columns="JumpPointId" type="System.Int32" />
+    <property name="AllowedRealm" columns="AllowedRealm" type="System.Byte" />
+    <property name="Heading" columns="Heading" type="System.Int32" />
+    <property name="JumpPointType" columns="JumpPointType" type="System.String" />
+    <property name="Region" columns="Region" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="JumpPointMultiTargetLocation" table="jumppointmultitargetlocation">
+    <property name="Heading" id="true" id-index="0" columns="Heading" type="System.Int32" />
+    <property name="JumpPoint" id="true" id-index="1" columns="JumpPointId" ref="OneToMany" type="jumppoint" />
+    <property name="Realm" id="true" id-index="2" columns="Realm" type="System.Byte" />
+    <property name="Region" id="true" id-index="3" columns="Region" type="System.Int32" />
+    <property name="X" id="true" id-index="4" columns="X" type="System.Int32" />
+    <property name="Y" id="true" id-index="5" columns="Y" type="System.Int32" />
+    <property name="Z" id="true" id-index="6" columns="Z" type="System.Int32" />
+  </class>
+  <class name="LineXSpell" table="linexspell">
+    <property name="Id" id="true" columns="LineXSpellId" type="System.Int32" />
+    <property name="Level" columns="Level" type="System.Int32" />
+    <property name="LineName" columns="LineName" type="System.String" />
+    <property name="SpellId" columns="SpellId" type="System.Int32" />
+  </class>
+  <class name="Loot" table="loot">
+    <property name="Id" id="true" columns="LootId" type="System.Int32" />
+    <property name="Chance" columns="Chance" type="System.Int32" />
+    <property name="GenericItemTemplate" columns="GenericItemTemplateId" ref="OneToMany" type="itemtemplate" />
+    <property name="LootListId" columns="LootListId" type="System.Int32" />
+    <property name="LootType" columns="LootType" type="System.String" />
+  </class>
+  <class name="LootList" table="lootlist">
+    <property name="Id" id="true" columns="LootListId" type="System.Int32" />
+  </class>
+  <class name="MerchantItem" table="merchantitem">
+    <property name="Id" id="true" columns="MerchantItemId" type="System.Int32" />
+    <property name="ItemTemplate" columns="ItemTemplateId" ref="OneToMany" type="itemtemplate" />
+    <property name="MerchantPage" columns="MerchantPageId" ref="OneToMany" type="merchantpage" />
+    <property name="Position" columns="Position" type="System.Int32" />
+  </class>
+  <class name="MerchantPage" table="merchantpage">
+    <property name="Id" id="true" columns="MerchantPageId" type="System.Int32" />
+    <property name="Currency" columns="Currency" type="System.Byte" />
+    <property name="MerchantWindow" columns="MerchantWindowId" ref="OneToMany" type="merchantwindow" />
+    <property name="Position" columns="Position" type="System.Int32" />
+  </class>
+  <class name="MerchantWindow" table="merchantwindow">
+    <property name="Id" id="true" columns="MerchantWindowId" type="System.Int32" />
+  </class>
+  <class name="NpcEquipment" table="npcequipment">
+    <property name="Id" id="true" columns="ItemId" type="System.Int32" />
+    <property name="GlowEffect" columns="GlowEffect" type="System.Int32" />
+    <property name="Inventory" columns="InventoryId" ref="OneToMany" type="gamenpcinventory" />
+    <property name="Model" columns="Model" type="System.Int32" />
+    <property name="ModelExtension" columns="ModelExtension" type="System.Byte" />
+    <property name="NPCEquipmentType" columns="NPCEquipmentType" type="System.String" />
+    <property name="or1" columns="Color" type="System.Int32" />
+    <property name="SlotPosition" columns="SlotPosition" type="System.Int32" />
+  </class>
+  <class name="Path" table="path">
+    <property name="Id" id="true" columns="PathId" type="System.Int32" />
+    <property name="PathType" columns="PathType" type="System.String" />
+    <property name="RegionId" columns="RegionId" type="System.Int32" />
+    <property name="StartingPoint" columns="StartingPoint" ref="OneToMany" type="pathpoint" />
+    <property name="SteedModel" columns="SteedModel" type="System.Int32" />
+    <property name="SteedName" columns="SteedName" type="System.String" />
+  </class>
+  <class name="PathPoint" table="pathpoint">
+    <property name="Id" id="true" columns="PathPointId" type="System.Int32" />
+    <property name="NextPoint" columns="NextPoint" ref="OneToMany" type="pathpoint" />
+    <property name="Speed" columns="Speed" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="PersistantGameObject" table="persistantgameobject">
+    <property name="Id" id="true" columns="PersistantGameObjectId" type="System.Int32" />
+    <property name="BlockChance" columns="BlockChance" type="System.Byte" />
+    <property name="DoorId" columns="DoorId" type="System.Int32" />
+    <property name="EvadeChance" columns="EvadeChance" type="System.Byte" />
+    <property name="FactionId" columns="FactionId" type="System.Int32" />
+    <property name="Flags" columns="Flags" type="System.Byte" />
+    <property name="GuildName" columns="GuildName" type="System.String" />
+    <property name="Heading" columns="Heading" type="System.Int32" />
+    <property name="InventoryId" columns="InventoryId" type="System.Int32" />
+    <property name="LeftHandSwingChance" columns="LeftHandSwingChance" type="System.Byte" />
+    <property name="Level" columns="Level" type="System.Byte" />
+    <property name="LootListId" columns="LootListId" type="System.Int32" />
+    <property name="MaxSpeedBase" columns="MaxSpeedBase" type="System.Int32" />
+    <property name="MeleeDamageType" columns="MeleeDamageType" type="System.Byte" />
+    <property name="MerchantWindowId" columns="MerchantWindowId" type="System.Int32" />
+    <property name="Model" columns="Model" type="System.Int32" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="ParryChance" columns="ParryChance" type="System.Byte" />
+    <property name="PersistantGameObjectType" columns="PersistantGameObjectType" type="System.String" />
+    <property name="Realm" columns="Realm" type="System.Byte" />
+    <property name="RegionId" columns="RegionId" type="System.Int32" />
+    <property name="RespawnInterval" columns="RespawnInterval" type="System.Int32" />
+    <property name="Size" columns="Size" type="System.Byte" />
+    <property name="ToolType" columns="ToolType" type="System.Byte" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+    <property name="Z" columns="Z" type="System.Int32" />
+  </class>
+  <class name="RawMaterial" table="rawmaterials">
+    <property name="CountNeeded" id="true" id-index="0" columns="CountNeeded" type="System.Byte" />
+    <property name="CraftItemData" id="true" id-index="1" columns="CraftItemDataId" ref="OneToMany" type="craftitemdata" />
+    <property name="MaterialTemplate" id="true" id-index="2" columns="MaterialTemplate" ref="OneToMany" type="itemtemplate" />
+  </class>
+  <class name="Region" table="region">
+    <property name="Id" id="true" columns="RegionId" type="System.Int32" />
+    <property name="Description" columns="Description" type="System.String" />
+    <property name="Expansion" columns="Expansion" type="System.Byte" />
+    <property name="IsDivingEnabled" columns="IsDivingEnabled" type="System.Boolean" />
+    <property name="IsDungeon" columns="IsDungeon" type="System.Boolean" />
+    <property name="IsInstance" columns="IsInstance" type="System.Boolean" />
+    <property name="Type" columns="Type" type="System.Byte" />
+  </class>
+  <class name="Salvage" table="salvage">
+    <property name="Id" id="true" columns="SalvageId" type="System.Int32" />
+    <property name="MaterialItemtemplate" columns="MaterialItemtemplate" ref="OneToMany" type="itemtemplate" />
+    <property name="ObjectType" columns="ObjectType" type="System.Int32" />
+    <property name="SalvageLevel" columns="SalvageLevel" type="System.Int32" />
+  </class>
+  <class name="SinglePermission" table="singlepermission">
+    <property name="Id" id="true" columns="SinglePermissionId" type="System.Int32" />
+    <property name="Command" columns="Command" type="System.String" />
+    <property name="PlayerId" columns="PlayerId" type="System.String" />
+  </class>
+  <class name="SpawnGenerator" table="spawngenerator">
+    <property name="Id" id="true" columns="SpawnGeneratorBaseId" type="System.Int32" />
+    <property name="Height" columns="Height" type="System.Int32" />
+    <property name="Radius" columns="Radius" type="System.Int32" />
+    <property name="RegionId" columns="RegionId" type="System.Int32" />
+    <property name="SpawnGeneratorBaseType" columns="SpawnGeneratorBaseType" type="System.String" />
+    <property name="Width" columns="Width" type="System.Int32" />
+    <property name="X" columns="X" type="System.Int32" />
+    <property name="Y" columns="Y" type="System.Int32" />
+  </class>
+  <class name="SpawnTemplate" table="spawntemplate">
+    <property name="Id" id="true" columns="SpawnTemplateBaseId" type="System.Int32" />
+    <property name="Count" columns="Count" type="System.Int32" />
+    <property name="GameNPCTemplate" columns="GameNPCTemplateId" ref="OneToMany" type="gamenpctemplate" />
+    <property name="SpawnGeneratorBase" columns="SpawnGeneratorBaseId" ref="OneToMany" type="spawngenerator" />
+    <property name="SpawnTemplateBaseType" columns="SpawnTemplateBaseType" type="System.String" />
+  </class>
+  <class name="Specialization" table="specialization">
+    <property name="KeyName" id="true" columns="KeyName" type="System.String" />
+    <property name="Description" columns="Description" type="System.String" />
+    <property name="Icon" columns="Icon" type="System.Int32" />
+    <property name="Name" columns="Name" type="System.String" />
+  </class>
+  <class name="SpecXAbility" table="specxability">
+    <property name="Id" id="true" columns="SpecXAbilityId" type="System.Int32" />
+    <property name="AbilityKey" columns="AbilityKey" type="System.String" />
+    <property name="AbilityLevel" columns="AbilityLevel" type="System.Int32" />
+    <property name="Spec" columns="Spec" type="System.String" />
+    <property name="SpecLevel" columns="SpecLevel" type="System.Int32" />
+  </class>
+  <class name="Spell" table="spell">
+    <property name="Id" id="true" columns="SpellId" type="System.Int32" />
+    <property name="AmnesiaChance" columns="AmnesiaChance" type="System.Int32" />
+    <property name="CastTime" columns="CastTime" type="System.Double" />
+    <property name="ClientEffect" columns="ClientEffect" type="System.Int32" />
+    <property name="Concentration" columns="Concentration" type="System.Int32" />
+    <property name="Damage" columns="Damage" type="System.Double" />
+    <property name="DamageType" columns="DamageType" type="System.Int32" />
+    <property name="Description" columns="Description" type="System.String" />
+    <property name="Duration" columns="Duration" type="System.Int32" />
+    <property name="EffectGroup" columns="EffectGroup" type="System.Int32" />
+    <property name="Frequency" columns="Frequency" type="System.Int32" />
+    <property name="Icon" columns="Icon" type="System.Int32" />
+    <property name="InstrumentRequirement" columns="InstrumentRequirement" type="System.Int32" />
+    <property name="LifeDrainReturn" columns="LifeDrainReturn" type="System.Int32" />
+    <property name="Message1" columns="Message1" type="System.String" />
+    <property name="Message2" columns="Message2" type="System.String" />
+    <property name="Message3" columns="Message3" type="System.String" />
+    <property name="Message4" columns="Message4" type="System.String" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="Power" columns="Power" type="System.Int32" />
+    <property name="Pulse" columns="Pulse" type="System.Int32" />
+    <property name="PulsePower" columns="PulsePower" type="System.Int32" />
+    <property name="Radius" columns="Radius" type="System.Int32" />
+    <property name="Range" columns="Range" type="System.Int32" />
+    <property name="RecastDelay" columns="RecastDelay" type="System.Int32" />
+    <property name="ResurrectHealth" columns="ResurrectHealth" type="System.Int32" />
+    <property name="ResurrectMana" columns="ResurrectMana" type="System.Int32" />
+    <property name="SpellGroup" columns="SpellGroup" type="System.Int32" />
+    <property name="Target" columns="Target" type="System.String" />
+    <property name="Type" columns="Type" type="System.String" />
+    <property name="Value" columns="Value" type="System.Double" />
+  </class>
+  <class name="SpellLine" table="spellline">
+    <property name="KeyName" id="true" columns="KeyName" type="System.String" />
+    <property name="IsBaseLine" columns="IsBaseLine" type="System.Boolean" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="Spec" columns="Spec" type="System.String" />
+  </class>
+  <class name="Style" table="style">
+    <property name="Id" id="true" columns="Id" type="System.Int32" />
+    <property name="AttackResultRequirement" columns="AttackResultRequirement" type="System.Int32" />
+    <property name="BonusToDefense" columns="BonusToDefense" type="System.Int32" />
+    <property name="BonusToHit" columns="BonusToHit" type="System.Int32" />
+    <property name="EnduranceCost" columns="EnduranceCost" type="System.Int32" />
+    <property name="GrowthRate" columns="GrowthRate" type="System.Double" />
+    <property name="KeyName" columns="KeyName" ref="OneToMany" type="specialization" />
+    <property name="Name" columns="Name" type="System.String" />
+    <property name="OpeningRequirementType" columns="OpeningRequirementType" type="System.Int32" />
+    <property name="OpeningRequirementValue" columns="OpeningRequirementValue" type="System.Int32" />
+    <property name="SpecialType" columns="SpecialType" type="System.Int32" />
+    <property name="SpecialValue" columns="SpecialValue" type="System.Int32" />
+    <property name="SpecKeyName" columns="SpecKeyName" type="System.String" />
+    <property name="SpecLevelRequirement" columns="SpecLevelRequirement" type="System.Int32" />
+    <property name="StealthRequirement" columns="StealthRequirement" type="System.Boolean" />
+    <property name="TwoHandAnimation" columns="TwoHandAnimation" type="System.Int32" />
+    <property name="WeaponTypeRequirement" columns="WeaponTypeRequirement" type="System.Int32" />
+  </class>
+  <class name="Zone" table="zone">
+    <property name="Id" id="true" columns="ZoneId" type="System.Int32" />
+    <property name="Description" columns="Description" type="System.String" />
+    <property name="Region" columns="RegionId" ref="OneToMany" type="region" />
+    <property name="XOffset" columns="XOffset" type="System.Int32" />
+    <property name="YOffset" columns="YOffset" type="System.Int32" />
+  </class>
+  <source name="Database" type="MSSqlServer" provider="SqlClient" schema="dbo" catalog="dol1">
+    <connection-string>Data Source=.\sqlexpress; Initial Catalog=dol1; Integrated Security=SSPI;</connection-string>
+    <table name="ability">
+      <column name="KeyName" primary="true" type="AnsiStringFixedLength" prec="50" length="100" scale="0" />
+      <column name="Description" type="AnsiStringFixedLength" prec="10" length="10" scale="0" />
+      <column name="IconId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="account">
+      <column name="AccountId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="AccountName" type="AnsiStringFixedLength" prec="20" length="40" scale="0" />
+      <column name="BanAuthor" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="BanDuration" type="Int64" prec="19" length="8" scale="0" />
+      <column name="BanReason" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="CreationDate" type="DateTime" prec="23" length="8" scale="3" />
+      <column name="LastLogin" type="DateTime" prec="23" length="8" scale="3" />
+      <column name="LastLoginIp" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Mail" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="Password" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="PrivLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Realm" type="Byte" prec="3" length="1" scale="0" />
+    </table>
+    <table name="activequests">
+      <column name="AbstractQuestId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="PersistantGameObjectId" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gameplayer" primary-column="PersistantGameObjectId" foreign-key="FK949AF7E7607F4269" />
+      <column name="QuestType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Step" type="Byte" prec="3" length="1" scale="0" />
+    </table>
+    <table name="activetasks">
+      <column name="AbstractTaskId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gameplayer" primary-column="PersistantGameObjectId" foreign-key="FKE71FFDE16D0CB1D0" />
+      <column name="ItemName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="RewardGiverName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="StartingPlayedTime" type="Int64" prec="19" length="8" scale="0" />
+      <column name="TargetKilled" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="TargetMobName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="TaskType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="alliance">
+      <column name="AllianceId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="AllianceLeader" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="guild" primary-column="GuildId" foreign-key="FK3B31292746B1ABB" />
+      <column name="AMotd" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="area">
+      <column name="AreaId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="AreaType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Description" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Height" type="Int32" prec="10" length="4" scale="0" />
+      <column name="IsBroadcastEnabled" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Radius" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RegionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Sound" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Width" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="bindpoint">
+      <column name="BindPointId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Radius" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Realm" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Region" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="brain">
+      <column name="ABrainId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="persistantgameobject" primary-column="PersistantGameObjectId" foreign-key="FKD1DCA753244E265F" />
+      <column name="ABrainType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="AggroLevel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="AggroRange" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="braintemplate">
+      <column name="ABrainTemplateId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gamenpctemplate" primary-column="GameNPCTemplateId" foreign-key="FK6C657E3B0FA8BFC" />
+      <column name="ABrainTemplateType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="AggroLevel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="AggroRange" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="craftitemdata">
+      <column name="CraftItemDataId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CraftingLevel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CraftingSkill" type="Int32" prec="10" length="4" scale="0" />
+      <column name="TemplateToCraft" type="AnsiStringFixedLength" prec="255" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FK2D6FFBA76E9F2CC5" />
+    </table>
+    <table name="enemyfactions">
+      <column name="EnemyFactionId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="faction" primary-column="FactionId" />
+      <column name="FactionId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="faction" primary-column="FactionId" foreign-key="FK971790E2CC62C854" />
+    </table>
+    <table name="faction">
+      <column name="FactionId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="factionaggrolevel">
+      <column name="FactionId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="PersistantGameObjectId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gameplayer" primary-column="PersistantGameObjectId" foreign-key="FK920CCBE3607F4269" />
+      <column name="AggroLevel" type="Int32" prec="10" allow-null="true" length="4" scale="0" />
+    </table>
+    <table name="finishedquests">
+      <column name="Count" primary="true" type="Byte" prec="3" length="1" scale="0" />
+      <column name="FinishedQuestType" primary="true" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="PersistantGameObjectId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gameplayer" primary-column="PersistantGameObjectId" foreign-key="FK113064E3607F4269" />
+    </table>
+    <table name="friendfactions">
+      <column name="FactionId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="faction" primary-column="FactionId" foreign-key="FK971790E2CC62C855" />
+      <column name="FriendFactionID" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="faction" primary-column="FactionId" foreign-key="FK971790E2CC62C859" />
+    </table>
+    <table name="gamenpcinventory">
+      <column name="InventoryId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="IsCloakHoodUp" type="Boolean" prec="1" length="1" scale="0" />
+    </table>
+    <table name="gamenpctemplate">
+      <column name="GameNPCTemplateId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="BlockChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="EvadeChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="FactionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Flags" type="Byte" prec="3" length="1" scale="0" />
+      <column name="GameNPCTemplateType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="GuildName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="InventoryId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="LeftHandSwingChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="LootListId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="MaxLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaxSize" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaxSpeedBase" type="Int32" prec="10" length="4" scale="0" />
+      <column name="MeleeDamageType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MinLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MinSize" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Model" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="ParryChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Realm" type="Byte" prec="3" length="1" scale="0" />
+      <column name="RespawnInterval" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="gameplayer">
+      <column name="PersistantGameObjectId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="AccountId" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="account" primary-column="AccountId" foreign-key="FKBC4AC33BC4F1AF38" />
+      <column name="ActiveQuiverSlot" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ActiveWeaponSlot" type="Byte" prec="3" length="1" scale="0" />
+      <column name="BaseCharisma" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BaseConstitution" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BaseDexterity" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BaseEmpathy" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BaseIntelligence" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BasePiety" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BaseQuickness" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BaseStrength" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BindHeading" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BindRegionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BindX" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BindY" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BindZ" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BountyPoints" type="Int64" prec="19" length="8" scale="0" />
+      <column name="CancelStyle" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="CapturedKeeps" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CapturedTowers" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CharacterClassId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CraftingPrimarySkill" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CreationDate" type="DateTime" prec="23" length="8" scale="3" />
+      <column name="CreationModel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CurrentTitleType" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="CustomisationStep" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DeathCount" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DeathTime" type="Int64" prec="19" length="8" scale="0" />
+      <column name="DisabledAbilities" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="DisabledSpells" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="EndurancePercent" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Experience" type="Int64" prec="19" length="8" scale="0" />
+      <column name="EyeColor" type="Byte" prec="3" length="1" scale="0" />
+      <column name="EyeSize" type="Byte" prec="3" length="1" scale="0" />
+      <column name="FaceType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Gender" type="Int32" prec="10" length="4" scale="0" />
+      <column name="GuildName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="GuildNameFlag" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="GuildRank" type="Byte" prec="3" length="1" scale="0" />
+      <column name="HairColor" type="Byte" prec="3" length="1" scale="0" />
+      <column name="HairStyle" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Heading" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Health" type="Int32" prec="10" length="4" scale="0" />
+      <column name="IsAnonymous" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsLevelRespecUsed" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsLevelSecondStage" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="KillsAlbionDeathBlows" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsAlbionPlayers" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsAlbionSolo" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsHiberniaDeathBlows" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsHiberniaPlayers" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsHiberniaSolo" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsMidgardDeathBlows" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsMidgardPlayers" type="Int32" prec="10" length="4" scale="0" />
+      <column name="KillsMidgardSolo" type="Int32" prec="10" length="4" scale="0" />
+      <column name="LastName" type="AnsiStringFixedLength" prec="23" allow-null="true" length="46" scale="0" />
+      <column name="LastPlayed" type="DateTime" prec="23" length="8" scale="3" />
+      <column name="Level" type="Byte" prec="3" length="1" scale="0" />
+      <column name="LipSize" type="Byte" prec="3" length="1" scale="0" />
+      <column name="LotNumber" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Mana" type="Int32" prec="10" length="4" scale="0" />
+      <column name="MaxSpeedBase" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Model" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Money" type="Int64" prec="19" length="8" scale="0" />
+      <column name="MoodType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="PlayedTime" type="Int64" prec="19" length="8" scale="0" />
+      <column name="Race" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Realm" type="Byte" prec="3" length="1" scale="0" />
+      <column name="RealmLevel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RealmPoints" type="Int64" prec="19" length="8" scale="0" />
+      <column name="RealmSpecialtyPoints" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RegionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RespecAmountAllSkill" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RespecAmountSingleSkill" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RespecBought" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SafetyFlag" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="SerializedAbilities" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="SerializedCraftingSkills" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="SerializedFriendsList" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="SerializedSpecs" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="SerializedSpellLines" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="SkillSpecialtyPoints" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SlotPosition" type="Byte" prec="3" length="1" scale="0" />
+      <column name="SpellQueue" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Styles" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" />
+      <column name="TaskDone" type="Byte" prec="3" length="1" scale="0" />
+      <column name="TotalConstitutionLostAtDeath" type="Int32" prec="10" length="4" scale="0" />
+      <column name="UsedLevelCommand" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="gameplayerinventory">
+      <column name="InventoryId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gameplayer" primary-column="PersistantGameObjectId" foreign-key="FK32CD60F537789AE3" />
+      <column name="IsCloakHoodUp" type="Boolean" prec="1" length="1" scale="0" />
+    </table>
+    <table name="guild">
+      <column name="GuildId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Alliance" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="alliance" primary-column="AllianceId" foreign-key="FK1A0F02183B312E07" />
+      <column name="BountyPoints" type="Int64" prec="19" length="8" scale="0" />
+      <column name="Due" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Email" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Emblem" type="Int32" prec="10" length="4" scale="0" />
+      <column name="GuildName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Level" type="Int32" prec="10" length="4" scale="0" />
+      <column name="MeritPoints" type="Int64" prec="19" length="8" scale="0" />
+      <column name="Motd" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="OMotd" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="RealmPoints" type="Int64" prec="19" length="8" scale="0" />
+      <column name="TotalMoney" type="Int64" prec="19" length="8" scale="0" />
+      <column name="Webpage" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="guildrank">
+      <column name="GuildRankId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="AcHear" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="AcSpeak" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Alli" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Buff" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="BuyBanner" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Claim" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Deposit" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Dues" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Emblem" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="GcHear" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="GcSpeak" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="GetMission" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="GuildId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="guild" primary-column="GuildId" foreign-key="FK20CAA4A49243C872" />
+      <column name="Invite" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Motd" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="OcHear" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="OcSpeak" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Promote" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="RankLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Release" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Remove" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="SetNote" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="SummonBanner" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Title" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Upgrade" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="View" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Withdraw" type="Boolean" prec="1" length="1" scale="0" />
+    </table>
+    <table name="invalidname">
+      <column name="InvalidNameId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="item">
+      <column name="ItemId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="ArmorFactor" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ArmorLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Bonus" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BonusType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Charge" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ChargeEffectType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ChargeSpellId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Color" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Condition" type="Double" prec="53" length="8" scale="0" />
+      <column name="Count" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CrafterName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Damage" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DamagePerSecond" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DamageType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Durability" type="Byte" prec="3" length="1" scale="0" />
+      <column name="GenericItemType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="GlowEffect" type="Int32" prec="10" length="4" scale="0" />
+      <column name="HandNeeded" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Heading" type="Int32" prec="10" length="4" scale="0" />
+      <column name="InventoryId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="gameplayerinventory" primary-column="InventoryId" foreign-key="FK742DC15837789AE3" />
+      <column name="IsDropable" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsSaleable" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsTradable" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Level" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaterialLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaxCharge" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaxCount" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Model" type="Int32" prec="10" length="4" scale="0" />
+      <column name="ModelExtension" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Owner" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="gameplayer" primary-column="PersistantGameObjectId" foreign-key="FK742DC15860854DF9" />
+      <column name="Precision" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ProcEffectType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ProcSpellId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Quality" type="Int32" prec="10" length="4" scale="0" />
+      <column name="QuestName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Range" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Realm" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Region" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RespecType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Size" type="Byte" prec="3" length="1" scale="0" />
+      <column name="SlotPosition" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Speed" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpellId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="TripPathId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Type" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Value" type="Int64" prec="19" length="8" scale="0" />
+      <column name="WeaponRange" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Weight" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="itemallowedclass">
+      <column name="AllowedClass" type="Byte" prec="3" allow-null="true" length="1" scale="0" />
+      <column name="ItemId" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="item" primary-column="ItemId" foreign-key="FK644525CD2E687F77" />
+    </table>
+    <table name="itemallowedclasstemplate">
+      <column name="AllowedClass" type="Byte" prec="3" allow-null="true" length="1" scale="0" />
+      <column name="ItemTemplateId" type="AnsiStringFixedLength" prec="255" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FKC2533EC4DBB2AF7" />
+    </table>
+    <table name="itemmagicalbonus">
+      <column name="Bonus" primary="true" type="Int16" prec="5" length="2" scale="0" />
+      <column name="BonusType" primary="true" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ItemId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="item" primary-column="ItemId" foreign-key="FK9BC8D5C32E687F77" />
+    </table>
+    <table name="itemmagicalbonustemplate">
+      <column name="Bonus" primary="true" type="Int16" prec="5" length="2" scale="0" />
+      <column name="BonusType" primary="true" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ItemTemplateId" primary="true" type="AnsiStringFixedLength" prec="255" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FK186025CA4DBB2AF7" />
+    </table>
+    <table name="itemtemplate">
+      <column name="ItemTemplateId" primary="true" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="ArmorFactor" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ArmorLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Bonus" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BonusType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Charge" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ChargeEffectType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ChargeSpellId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Color" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Condition" type="Double" prec="53" length="8" scale="0" />
+      <column name="Damage" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DamagePerSecond" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DamageType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Durability" type="Byte" prec="3" length="1" scale="0" />
+      <column name="GlowEffect" type="Int32" prec="10" length="4" scale="0" />
+      <column name="HandNeeded" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Heading" type="Int32" prec="10" length="4" scale="0" />
+      <column name="IsDropable" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsSaleable" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsTradable" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="ItemTemplateType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Level" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaterialLevel" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaxCharge" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MaxCount" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Model" type="Int32" prec="10" length="4" scale="0" />
+      <column name="ModelExtension" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="PackSize" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Precision" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ProcEffectType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ProcSpellId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Quality" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Range" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Realm" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Region" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RespecType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Size" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Speed" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpellId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="TripPathId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Type" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Value" type="Int64" prec="19" length="8" scale="0" />
+      <column name="WeaponRange" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Weight" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="jumppoint">
+      <column name="JumpPointId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="AllowedRealm" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Heading" type="Int32" prec="10" length="4" scale="0" />
+      <column name="JumpPointType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Region" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="jumppointmultitargetlocation">
+      <column name="Heading" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="JumpPointId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="jumppoint" primary-column="JumpPointId" foreign-key="FKBB7748FBE171E74" />
+      <column name="Realm" primary="true" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Region" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" primary="true" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="linexspell">
+      <column name="LineXSpellId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Level" type="Int32" prec="10" length="4" scale="0" />
+      <column name="LineName" type="AnsiStringFixedLength" prec="250" length="255" scale="0" />
+      <column name="SpellId" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="loot">
+      <column name="LootId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Chance" type="Int32" prec="10" length="4" scale="0" />
+      <column name="GenericItemTemplateId" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FK8AC305B3AD3BB1FF" />
+      <column name="LootListId" type="Int32" prec="10" allow-null="true" length="4" scale="0" />
+      <column name="LootType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="lootlist">
+      <column name="LootListId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+    </table>
+    <table name="merchantitem">
+      <column name="MerchantItemId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="ItemTemplateId" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FKE07B9DEF4DBB2AF7" />
+      <column name="MerchantPageId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="merchantpage" primary-column="MerchantPageId" foreign-key="FKE07B9DEF3DA787EE" />
+      <column name="Position" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="merchantpage">
+      <column name="MerchantPageId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Currency" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MerchantWindowId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="merchantwindow" primary-column="MerchantWindowId" foreign-key="FK80E7870E9F46021D" />
+      <column name="Position" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="merchantwindow">
+      <column name="MerchantWindowId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+    </table>
+    <table name="npcequipment">
+      <column name="ItemId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Color" type="Int32" prec="10" length="4" scale="0" />
+      <column name="GlowEffect" type="Int32" prec="10" length="4" scale="0" />
+      <column name="InventoryId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="gamenpcinventory" primary-column="InventoryId" foreign-key="FK3A881AB737789AE3" />
+      <column name="Model" type="Int32" prec="10" length="4" scale="0" />
+      <column name="ModelExtension" type="Byte" prec="3" length="1" scale="0" />
+      <column name="NPCEquipmentType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="SlotPosition" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="path">
+      <column name="PathId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="PathType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="RegionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="StartingPoint" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="pathpoint" primary-column="PathPointId" foreign-key="FK5FFB0316EFD0C5CB" />
+      <column name="SteedModel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SteedName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="pathpoint">
+      <column name="PathPointId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="NextPoint" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="pathpoint" primary-column="PathPointId" foreign-key="FKA5A7963E551828B4" />
+      <column name="Speed" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="persistantgameobject">
+      <column name="PersistantGameObjectId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="BlockChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="DoorId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="EvadeChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="FactionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Flags" type="Byte" prec="3" length="1" scale="0" />
+      <column name="GuildName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Heading" type="Int32" prec="10" length="4" scale="0" />
+      <column name="InventoryId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="LeftHandSwingChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="Level" type="Byte" prec="3" length="1" scale="0" />
+      <column name="LootListId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="MaxSpeedBase" type="Int32" prec="10" length="4" scale="0" />
+      <column name="MeleeDamageType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="MerchantWindowId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Model" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="ParryChance" type="Byte" prec="3" length="1" scale="0" />
+      <column name="PersistantGameObjectType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Realm" type="Byte" prec="3" length="1" scale="0" />
+      <column name="RegionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RespawnInterval" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Size" type="Byte" prec="3" length="1" scale="0" />
+      <column name="ToolType" type="Byte" prec="3" length="1" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Z" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="rawmaterials">
+      <column name="CountNeeded" primary="true" type="Byte" prec="3" length="1" scale="0" />
+      <column name="CraftItemDataId" primary="true" type="Int32" prec="10" length="4" scale="0" foreign="true" primary-table="craftitemdata" primary-column="CraftItemDataId" foreign-key="FK23076A2A37D178EF" />
+      <column name="MaterialTemplate" primary="true" type="AnsiStringFixedLength" prec="255" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FK23076A2ACC758DEF" />
+    </table>
+    <table name="region">
+      <column name="RegionId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Description" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Expansion" type="Byte" prec="3" length="1" scale="0" />
+      <column name="IsDivingEnabled" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsDungeon" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="IsInstance" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Type" type="Byte" prec="3" length="1" scale="0" />
+    </table>
+    <table name="salvage">
+      <column name="SalvageId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="MaterialItemtemplate" type="AnsiStringFixedLength" prec="255" length="255" scale="0" foreign="true" primary-table="itemtemplate" primary-column="ItemTemplateId" foreign-key="FK2A1841FFD6EF374A" />
+      <column name="ObjectType" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SalvageLevel" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="singlepermission">
+      <column name="SinglePermissionId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="Command" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="PlayerId" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="spawngenerator">
+      <column name="SpawnGeneratorBaseId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Height" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Radius" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RegionId" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpawnGeneratorBaseType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Width" type="Int32" prec="10" length="4" scale="0" />
+      <column name="X" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Y" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="spawntemplate">
+      <column name="SpawnTemplateBaseId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Count" type="Int32" prec="10" length="4" scale="0" />
+      <column name="GameNPCTemplateId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="gamenpctemplate" primary-column="GameNPCTemplateId" foreign-key="FK47FA9DF97C02BE44" />
+      <column name="SpawnGeneratorBaseId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="spawngenerator" primary-column="SpawnGeneratorBaseId" foreign-key="FK47FA9DF9E5B11B39" />
+      <column name="SpawnTemplateBaseType" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="specialization">
+      <column name="KeyName" primary="true" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Description" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Icon" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="specxability">
+      <column name="SpecXAbilityId" primary="true" type="Int32" prec="10" length="4" scale="0" auto-inc="true" seed="1" inc="1" />
+      <column name="AbilityKey" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="AbilityLevel" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Spec" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="SpecLevel" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="spell">
+      <column name="SpellId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="AmnesiaChance" type="Int32" prec="10" length="4" scale="0" />
+      <column name="CastTime" type="Double" prec="53" length="8" scale="0" />
+      <column name="ClientEffect" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Concentration" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Damage" type="Double" prec="53" length="8" scale="0" />
+      <column name="DamageType" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Description" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Duration" type="Int32" prec="10" length="4" scale="0" />
+      <column name="EffectGroup" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Frequency" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Icon" type="Int32" prec="10" length="4" scale="0" />
+      <column name="InstrumentRequirement" type="Int32" prec="10" length="4" scale="0" />
+      <column name="LifeDrainReturn" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Message1" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Message2" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Message3" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Message4" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Power" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Pulse" type="Int32" prec="10" length="4" scale="0" />
+      <column name="PulsePower" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Radius" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Range" type="Int32" prec="10" length="4" scale="0" />
+      <column name="RecastDelay" type="Int32" prec="10" length="4" scale="0" />
+      <column name="ResurrectHealth" type="Int32" prec="10" length="4" scale="0" />
+      <column name="ResurrectMana" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpellGroup" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Target" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Type" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Value" type="Double" prec="53" length="8" scale="0" />
+    </table>
+    <table name="spellline">
+      <column name="KeyName" primary="true" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="IsBaseLine" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="Spec" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+    </table>
+    <table name="style">
+      <column name="Id" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="AttackResultRequirement" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BonusToDefense" type="Int32" prec="10" length="4" scale="0" />
+      <column name="BonusToHit" type="Int32" prec="10" length="4" scale="0" />
+      <column name="EnduranceCost" type="Int32" prec="10" length="4" scale="0" />
+      <column name="GrowthRate" type="Double" prec="53" length="8" scale="0" />
+      <column name="KeyName" type="AnsiStringFixedLength" prec="255" allow-null="true" length="255" scale="0" foreign="true" primary-table="specialization" primary-column="KeyName" foreign-key="FKEFB8BAC52FF74218" />
+      <column name="Name" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="OpeningRequirementType" type="Int32" prec="10" length="4" scale="0" />
+      <column name="OpeningRequirementValue" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpecialType" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpecialValue" type="Int32" prec="10" length="4" scale="0" />
+      <column name="SpecKeyName" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="SpecLevelRequirement" type="Int32" prec="10" length="4" scale="0" />
+      <column name="StealthRequirement" type="Boolean" prec="1" length="1" scale="0" />
+      <column name="TwoHandAnimation" type="Int32" prec="10" length="4" scale="0" />
+      <column name="WeaponTypeRequirement" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+    <table name="zone">
+      <column name="ZoneId" primary="true" type="Int32" prec="10" length="4" scale="0" />
+      <column name="Description" type="AnsiStringFixedLength" prec="255" length="255" scale="0" />
+      <column name="RegionId" type="Int32" prec="10" allow-null="true" length="4" scale="0" foreign="true" primary-table="region" primary-column="RegionId" foreign-key="FKA666912A6BC94F7F" />
+      <column name="XOffset" type="Int32" prec="10" length="4" scale="0" />
+      <column name="YOffset" type="Int32" prec="10" length="4" scale="0" />
+    </table>
+  </source>
+</domain>

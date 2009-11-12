@@ -1,0 +1,594 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B882B47-4B5D-4C84-A32B-E5A76B5DDFF5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>PuzzleIcon.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Puzzle.ObjectMapper.GUI</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>Puzzle.ObjectMapper.GUI</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Puzzle.ObjectMapper.GUI.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Puzzle.ObjectMapper.GUI.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Puzzle.CoreLib, Version=1.0.6.3711, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Puzzle.CoreLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.NPersist.Tools.QueryAnalyser, Version=1.0.2372.3714, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Puzzle.NPersist.Tools.QueryAnalyser.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.NPersist.Tools.QueryAnalyzer.SyntaxBoxWrapper, Version=1.0.2372.3713, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Puzzle.NPersist.Tools.QueryAnalyzer.SyntaxBoxWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.SyntaxBox, Version=1.4.10.3712, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Puzzle.SyntaxBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.SyntaxBox.DefaultSyntaxFiles, Version=1.0.2372.3712, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Puzzle.SyntaxBox.DefaultSyntaxFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.SyntaxDocument, Version=1.4.10.3711, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Puzzle.SyntaxDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\..\NCore\Framework\Puzzle.NCore.Framework NET 2.0.csproj">
+      <Project>{5FB1569E-253E-42A7-A4E8-B4651FC6DCA2}</Project>
+      <Name>Puzzle.NCore.Framework NET 2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NPath\Framework\Puzzle.NPath.Framework.NET 2.0.csproj">
+      <Project>{7F415FBF-21FA-4E00-82DE-AAD8CEECC84B}</Project>
+      <Name>Puzzle.NPath.Framework.NET 2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NPersist\Framework\Puzzle.NPersist.Framework.NET 2.0.csproj">
+      <Project>{E6C03D2A-D150-4473-9439-D300746A1390}</Project>
+      <Name>Puzzle.NPersist.Framework.NET 2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NPersist\Tools\DomainExplorer\Puzzle.NPersist.Tools.DomainExplorer.csproj">
+      <Project>{F1B109E8-CDC0-4434-96BD-47E6C5681BF9}</Project>
+      <Name>Puzzle.NPersist.Tools.DomainExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\Puzzle.ObjectMapper.Plugin.vbproj">
+      <Name>Puzzle.ObjectMapper.Plugin</Name>
+      <Project>{43C9F642-2A0A-482D-8385-FB2F506BAADE}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectModel\Puzzle.ObjectMapper.GUI.ProjectModel.vbproj">
+      <Name>Puzzle.ObjectMapper.GUI.ProjectModel</Name>
+      <Project>{3675C77C-3DCF-403C-8F56-FC6C8D47CF00}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Puzzle.ObjectMapper.Tools.vbproj">
+      <Name>Puzzle.ObjectMapper.Tools</Name>
+      <Project>{EDB43C14-3B09-418F-A2BC-59728F8C85CF}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppEntry.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Attributes\DisplayNameAttribute.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\ColumnConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\ConverterMethodConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\DataTypeConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\ItemTypeConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\OrderByConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\SourceClassConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\SourceConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\SourcePropertyConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\SuperClassConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Converters\TableConverter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Descriptors\DisplayNamePropertyDescriptor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Descriptors\MetaDataPropertyDescriptor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Descriptors\PropertyDescriptorBase.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Editors\AdditionalColumnsEditor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Editors\AdditionalIdColumnsEditor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\FileExtensions\FileAssociation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\ApplicationSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\CompileXmlBehindTrigger.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\EnvironmentSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\FontSetting.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\FontSubSetting.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\License.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\OptionSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\SynchronizationSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\VerificationSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Settings\XmlBehindSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\IconManager.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Config\ClassesToCodeConfigItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Config\ConfigItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Config\ConfigListItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Config\SourceCodeFileItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Config\SourceCodeFileListItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\MapExceptionItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\MapListItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\ClassListMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\ClassMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\ColumnMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\DomainMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\PropertyMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\SourceListMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\SourceMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\Classes\Map\TableMapItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\ListView\MapListView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Config\ClassesToCodeConfigProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Config\ClassesToTablesConfigProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Config\DomainConfigProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Config\SourceCodeFileProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Config\TablesToClassesConfigProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\ClassProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\ColumnProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\DomainProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\EnumValueProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\PropertiesBase.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\PropertyProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\SourceProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Map\TableProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\ProjectProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Uml\UmlClassProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Uml\UmlDiagramProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Uml\UmlLineEndProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\Classes\Uml\UmlLinePointProperties.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\PropertyGrid\MapPropertyGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\ClassesToCodeConfigNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\ClassesToTablesConfigNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\ConfigListNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\ConfigNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\SourceCodeFileListNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\SourceCodeFileNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Config\TablesToClassesConfigNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\MapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\ClassListMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\ClassMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\ColumnMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\DomainMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\EnumValueMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\NamespaceMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\PropertyMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\SourceListMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\SourceMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Map\TableMapNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Preview\ClassesToCode\PreviewFileNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Preview\ClassesToCode\PreviewFolderNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\ProjectNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Uml\UmlClassListNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Uml\UmlClassNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Uml\UmlDiagramListNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Uml\UmlDiagramNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Uml\UmlLineListNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\Classes\Uml\UmlLineNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\TreeView\MapTreeView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\UserDocuments\DblBufferPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\DomainMap\UserDocuments\UserDocTabPage.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Printing\TextPrintDocument.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\About\frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Dialogues\frmAddProperty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Dialogues\frmAssociateFiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Dialogues\frmYesToAll.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Dtb\frmImportDTB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Dtb\frmImportDtbStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Editors\frmColumnListEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\frmDomainMapBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\NHibernate\frmExportToNHibernate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Options\frmOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\Options\OptionsNode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\SearchReplace\frmSearchReplace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\SearchReplace\Wizards\ImplementDomainWizard\frmGenDomWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\SearchReplace\Wizards\ImplementDomainWizard\GenDomWizardService.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\SearchReplace\Wizards\WrapDbWizard\frmWrapDbWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DomainMap\SearchReplace\Wizards\WrapDbWizard\WrapDbWizardService.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\splash\SplashForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\ConverterClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Plugins\ConverterMethod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Plugins\PluginMethod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\ConnectionServices.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\DialogueServices.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\FormattingServices.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\LogServices.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\MapServices.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="ObjectMapper Icon 32x32.ico" />
+    <Content Include="PuzzleIcon.ico" />
+    <EmbeddedResource Include="Components\DomainMap\ListView\MapListView.resx">
+      <DependentUpon>MapListView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\DomainMap\PropertyGrid\MapPropertyGrid.resx">
+      <DependentUpon>MapPropertyGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\DomainMap\TreeView\MapTreeView.resx">
+      <DependentUpon>MapTreeView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\DomainMap\UserDocuments\UserDocTabPage.resx">
+      <DependentUpon>UserDocTabPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Printing\TextPrintDocument.resx">
+      <DependentUpon>TextPrintDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\About\frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Dialogues\frmAddProperty.resx">
+      <DependentUpon>frmAddProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Dialogues\frmAssociateFiles.resx">
+      <DependentUpon>frmAssociateFiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Dialogues\frmYesToAll.resx">
+      <DependentUpon>frmYesToAll.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Dtb\frmImportDTB.resx">
+      <DependentUpon>frmImportDTB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Dtb\frmImportDtbStatus.resx">
+      <DependentUpon>frmImportDtbStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Editors\frmColumnListEditor.resx">
+      <DependentUpon>frmColumnListEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\frmDomainMapBrowser.resx">
+      <DependentUpon>frmDomainMapBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\NHibernate\frmExportToNHibernate.resx">
+      <DependentUpon>frmExportToNHibernate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\Options\frmOptions.resx">
+      <DependentUpon>frmOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\SearchReplace\frmSearchReplace.resx">
+      <DependentUpon>frmSearchReplace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\SearchReplace\Wizards\ImplementDomainWizard\frmGenDomWizard.resx">
+      <DependentUpon>frmGenDomWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DomainMap\SearchReplace\Wizards\WrapDbWizard\frmWrapDbWizard.resx">
+      <DependentUpon>frmWrapDbWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\splash\SplashForm.resx">
+      <DependentUpon>SplashForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\DomainMap\ListView\Classes\Uml\" />
+    <Folder Include="Forms\DomainMap\CustomMetaData\" />
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

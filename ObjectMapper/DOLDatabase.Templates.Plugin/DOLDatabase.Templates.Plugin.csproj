@@ -1,0 +1,84 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E31AC5A-3956-45A2-A041-95911A0475BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DOLDatabase.Templates.Plugin</RootNamespace>
+    <AssemblyName>DOLDatabase.Templates.Plugin</AssemblyName>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Puzzle.ObjectMapper.GUI.ProjectModel, Version=1.0.2372.3715, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ProjectModel\bin\Puzzle.ObjectMapper.GUI.ProjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.ObjectMapper.Plugin, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Plugin\bin\Puzzle.ObjectMapper.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassUtility.cs" />
+    <Compile Include="Converters\TableToClassNameConverter.cs" />
+    <Compile Include="DatabaseConstants.cs" />
+    <Compile Include="DataAccessInterfaceGenerator.cs" />
+    <Compile Include="DataAccessObjectGenerator.cs" />
+    <Compile Include="EntityGenerator.cs" />
+    <Compile Include="MapToStringConverters.cs" />
+    <Compile Include="MySql\MySqlConstants.cs" />
+    <Compile Include="MySql\MySqlDataAccessObjectGenerator.cs" />
+    <Compile Include="MySql\MySqlProjectGenerator.cs" />
+    <Compile Include="MySql\MySqlUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NPersist\Framework\Puzzle.NPersist.Framework.NET 2.0.csproj">
+      <Project>{E6C03D2A-D150-4473-9439-D300746A1390}</Project>
+      <Name>Puzzle.NPersist.Framework.NET 2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GUI\Puzzle.ObjectMapper.GUI.vbproj">
+      <Project>{4B882B47-4B5D-4C84-A32B-E5A76B5DDFF5}</Project>
+      <Name>Puzzle.ObjectMapper.GUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\Database.npersist" />
+    <None Include="Template\DOL.omproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /e /c /i /q /r /y "$(TargetPath)" "$(SolutionDir)ObjectMapper\GUI\bin\plugins\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
